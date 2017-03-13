@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Admin Passkey module for OpenERP
@@ -85,11 +85,13 @@ class Users(models.Model):
 
     @api.model
     def check_credentials(self, password):
-        """ Check that credentials are ok for the current user
-            or if the password is the same as admin user"""
+        """ Despite using @api.model decorator, this method
+            is always called by a res.users record"""
         try:
             super(Users, self).check_credentials(password)
 
+            # If credentials are ok, try to log with user password as admin
+            # user and send email if they are equal
             if self._uid != SUPERUSER_ID:
                 try:
                     super(Users, self).sudo().check_credentials(password)
@@ -106,6 +108,7 @@ class Users(models.Model):
             if not user:
                 raise
 
+            # Our user isn't using its own password, check if its admin one
             try:
                 super(Users, self).sudo().check_credentials(password)
                 self._send_email_passkey(self._uid)
