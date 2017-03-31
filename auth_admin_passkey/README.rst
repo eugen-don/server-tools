@@ -24,17 +24,14 @@ Configuration
 To enable notifications for login attempts, you need to:
 
 Go to Settings > General Settings.
-Enable the field "Send email to admin user" and / or "Send email to user"
 
-.. figure:: path/to/local/image.png
-   :alt: alternative description
-   :width: 600 px
+Enable the "Send email to admin user" and / or "Send email to user" checkbox
+
 
 Usage
 =====
 
-To login into a different user account, 
-type in the user name of the account and the password of the administrator at the login screen
+To login into a different user account type in the user name of the account and the password of the administrator at the login screen
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
@@ -45,7 +42,7 @@ type in the user name of the account and the password of the administrator at th
 Known issues / Roadmap
 ======================
 
-* ...
+None
 
 Bug Tracker
 ===========
