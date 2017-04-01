@@ -11,7 +11,6 @@
     'license': 'AGPL-3',
     'depends': [
         'mail',
-        'base_setup',
     ],
     'data': [
         'data/ir_config_parameter.xml',
